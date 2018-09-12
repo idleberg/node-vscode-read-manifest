@@ -1,0 +1,24 @@
+{
+  "name": "vscode-read-manifest",
+  "version": "0.0.0",
+  "description": "Read the manifest (package.json) of any Visual Studio Code extension",
+  "license": "MIT",
+  "scripts": {},
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idleberg/node-vscode-read-manifest.git"
+  },
+  "keywords": [
+    "vscode",
+    "vscode extension",
+    "package.json"
+  ],
+  "dependencies": {
+    "util": "^0.11.0",
+    "vscode": "^1.1.21"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0"
+  }
+}
