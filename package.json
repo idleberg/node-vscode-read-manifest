@@ -1,6 +1,6 @@
 {
   "name": "vscode-read-manifest",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Read the manifest (package.json) of any Visual Studio Code extension",
   "license": "MIT",
   "scripts": {
