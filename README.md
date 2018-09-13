@@ -18,14 +18,17 @@ Example usage in script:
 ```js
 const readManifest = require('vscode-read-manifest');
 
-// Async
+// Unique package identifier
+const packageID = 'idleberg.applescript';
+
+// Asynchronous
 (async () => {
-    let manifest = await readManifest('idleberg.applescript');
+    let manifest = await readManifest(packageID);
     console.log(manifest);
 })();
 
-// Sync
-let manifest = readManifest.sync('idleberg.applescript');
+// Synchronous
+let manifest = readManifest.sync(packageID);
 console.log(manifest);
 ```
 
