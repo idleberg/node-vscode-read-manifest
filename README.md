@@ -23,12 +23,12 @@ const packageID = 'idleberg.applescript';
 
 // Asynchronous
 (async () => {
-    let manifest = await readManifest(packageID);
+    const manifest = await readManifest(packageID);
     console.log(manifest);
 })();
 
 // Synchronous
-let manifest = readManifest.sync(packageID);
+const manifest = readManifest.sync(packageID);
 console.log(manifest);
 ```
 
