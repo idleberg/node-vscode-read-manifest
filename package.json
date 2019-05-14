@@ -1,7 +1,7 @@
 {
   "name": "vscode-read-manifest",
   "version": "0.1.0",
-  "description": "Read the manifest (package.json) of any Visual Studio Code extension",
+  "description": "Read the manifest (package.json) of any installed Visual Studio Code extension",
   "license": "MIT",
   "scripts": {
     "precommit": "npm run test",

@@ -5,11 +5,11 @@
 [![CircleCI](https://flat.badgen.net/circleci/github/idleberg/node-vscode-read-manifest)](https://circleci.com/gh/idleberg/node-vscode-read-manifest)
 [![David](https://flat.badgen.net/david/dev/idleberg/node-vscode-read-manifest)](https://david-dm.org/idleberg/node-vscode-read-manifest?type=dev)
 
-Read the manifest (`package.json`) of any Visual Studio Code extension
+Read the manifest (`package.json`) of any installed Visual Studio Code extension
 
 ## Installation
 
-`yarn add vscode-read-manifest || npm install vscode-read-manifest`
+`npm install vscode-read-manifest -S`
 
 ## Usage
 
