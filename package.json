@@ -18,11 +18,11 @@
     "package.json"
   ],
   "dependencies": {
-    "util": "^0.11.1",
-    "vscode": "^1.1.24"
+    "util": "^0.12.0",
+    "vscode": "^1.1.34"
   },
   "devDependencies": {
-    "eslint": "^5.9.0",
-    "husky": "^1.2.0"
+    "eslint": "^5.16.0",
+    "husky": "^2.3.0"
   }
 }
