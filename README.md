@@ -3,7 +3,7 @@
 [![npm](https://flat.badgen.net/npm/license/vscode-read-manifest)](https://www.npmjs.org/package/vscode-read-manifest)
 [![npm](https://flat.badgen.net/npm/v/vscode-read-manifest)](https://www.npmjs.org/package/vscode-read-manifest)
 [![CircleCI](https://flat.badgen.net/circleci/github/idleberg/node-vscode-read-manifest)](https://circleci.com/gh/idleberg/node-vscode-read-manifest)
-[![David](https://flat.badgen.net/david/dev/idleberg/node-vscode-read-manifest)](https://david-dm.org/idleberg/node-vscode-read-manifest?type=dev)
+[![David](https://flat.badgen.net/david/dep/idleberg/node-vscode-read-manifest)](https://david-dm.org/idleberg/node-vscode-read-manifest)
 
 Read the manifest (`package.json`) of any installed Visual Studio Code extension
 
