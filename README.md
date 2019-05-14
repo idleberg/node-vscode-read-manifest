@@ -32,6 +32,10 @@ const manifest = readManifest.sync(packageID);
 console.log(manifest);
 ```
 
+## Related
+
+- [atom-read-manifest](https://www.npmjs.com/package/atom-read-manifest)
+
 ## License
 
 This work is licensed under [The MIT License](https://opensource.org/licenses/MIT)
