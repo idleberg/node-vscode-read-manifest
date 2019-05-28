@@ -13,7 +13,9 @@ Read the manifest (`package.json`) of any installed Visual Studio Code extension
 
 ## Usage
 
-Example usage in script:
+`readManifest(packageID?: string)`
+
+**Example**:
 
 ```js
 const readManifest = require('vscode-read-manifest');
