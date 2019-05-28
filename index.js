@@ -1,36 +1,35 @@
 'use strict';
 
-const { extensions } = require('vscode');
 const findUp = require('find-up');
+const { extensions } = require('vscode');
 const { promisify } = require('util');
 const { readFile, readFileSync } = require('fs');
-const { resolve } = require('path');
+const { join, resolve } = require('path');
 
 const readFileAsync = promisify(readFile);
 
-module.exports = (extensionID = false) => {
+module.exports = async (extensionID = '') => {
     let filePath;
 
     if (extensionID) {
         const extensionPath = extensions.getExtension(extensionID).extensionPath;
         filePath = resolve(extensionPath, 'package.json');
     } else {
-        filePath = findUp('package.json');
+        filePath = await findUp('package.json', { cwd: join(__dirname, '..') });
     }
 
     return readFileAsync(filePath, 'utf8').then(file => JSON.parse(file));
 };
 
-module.exports.sync = (extensionID = false) => {
+module.exports.sync = (extensionID = '') => {
     let filePath;
 
     if (extensionID) {
         const extensionPath = extensions.getExtension(extensionID).extensionPath;
         filePath = resolve(extensionPath, 'package.json');
     } else {
-        filePath = findUp('package.json');
+        filePath = findUp.sync('package.json', { cwd: join(__dirname, '..') });
     }
-    const file = readFileSync(filePath, 'utf8');
 
-    return JSON.parse(file);
+    return JSON.parse(readFileSync(filePath, 'utf8'));
 };
