@@ -13,24 +13,24 @@ Read the manifest (`package.json`) of any installed Visual Studio Code extension
 
 ## Usage
 
-`readManifest(packageID?: string)`
+`readManifest(packageID?: string)` / `readManifestSync(packageID?: string)`
 
 **Example**:
 
 ```js
-const readManifest = require('vscode-read-manifest');
+const { readManifest, readManifestSync } = require('vscode-read-manifest');
 
 // Unique package identifier
 const packageID = 'idleberg.applescript';
 
-// Asynchronous
+// Asynchronous usage
 (async () => {
     const manifest = await readManifest(packageID);
     console.log(manifest);
 })();
 
-// Synchronous
-const manifest = readManifest.sync(packageID);
+// Synchronous usage
+const manifest = readManifestSync(packageID);
 console.log(manifest);
 ```
 
