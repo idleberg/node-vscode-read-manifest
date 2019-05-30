@@ -23,13 +23,13 @@ const { readManifest, readManifestSync } = require('vscode-read-manifest');
 // Unique package identifier
 const packageID = 'idleberg.applescript';
 
-// Asynchronous usage
+// Asynchronous
 (async () => {
     const manifest = await readManifest(packageID);
     console.log(manifest);
 })();
 
-// Synchronous usage
+// Synchronous
 const manifest = readManifestSync(packageID);
 console.log(manifest);
 ```
