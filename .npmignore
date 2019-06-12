@@ -10,6 +10,7 @@ types/
 .travis.yml
 gulpfile.js
 tsconfig.json
+tsconfig.tsbuildinfo
 tslint.json
 
 # Project-specific

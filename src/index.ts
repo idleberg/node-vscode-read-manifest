@@ -8,7 +8,7 @@ const { join, resolve } = require('path');
 
 const readFileAsync = promisify(readFile);
 
-const readManifest = async (extensionID = '') => {
+const readManifest = async (extensionID: string = ''): Promise<Object> => {
   let filePath;
 
   if (extensionID) {
@@ -19,10 +19,15 @@ const readManifest = async (extensionID = '') => {
     filePath = await findUp('package.json', { cwd: join(selfRoot, '../..') });
   }
 
-  return readFileAsync(filePath, 'utf8').then(file => JSON.parse(file));
+  try {
+    const fileContents = await readFileAsync(filePath, 'utf8');
+    return JSON.parse(fileContents);
+  } catch (err) {
+    return null;
+  }
 };
 
-const readManifestSync = (extensionID = '') => {
+const readManifestSync = (extensionID: string = ''): Object => {
   let filePath;
 
   if (extensionID) {
@@ -33,7 +38,12 @@ const readManifestSync = (extensionID = '') => {
     filePath = findUp.sync('package.json', { cwd: join(selfRoot, '../..') });
   }
 
-  return JSON.parse(readFileSync(filePath, 'utf8'));
+  try {
+    const fileContents = readFileSync(filePath, 'utf8');
+    return JSON.parse(fileContents);
+  } catch (err) {
+    return null;
+  }
 };
 
 export {
