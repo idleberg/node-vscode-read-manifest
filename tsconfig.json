@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "declaration": true,
-        "inlineSourceMap": true,
+        "inlineSourceMap": false,
         "lib": [
             "dom",
             "es7"
@@ -13,7 +13,7 @@
         "outDir": "./lib",
         "removeComments": false,
         "rootDir": "src",
-        "sourceMap": false,
+        "sourceMap": true,
         "target": "es5",
         "incremental": true
     },
