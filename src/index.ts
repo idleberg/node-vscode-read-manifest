@@ -8,16 +8,11 @@ const { join, resolve } = require('path');
 
 const readFileAsync = promisify(readFile);
 
-const readManifest = async (extensionID: string = ''): Promise<Object> => {
+const readManifest = async (extensionID: string): Promise<Object> => {
   let filePath;
 
-  if (extensionID) {
-    const extensionPath = extensions.getExtension(extensionID).extensionPath;
-    filePath = resolve(extensionPath, 'package.json');
-  } else {
-    const selfRoot = await findUp('package.json', { cwd: __dirname });
-    filePath = await findUp('package.json', { cwd: join(selfRoot, '../..') });
-  }
+  const extensionPath = extensions.getExtension(extensionID).extensionPath;
+  filePath = resolve(extensionPath, 'package.json');
 
   try {
     const fileContents = await readFileAsync(filePath, 'utf8');
@@ -27,16 +22,11 @@ const readManifest = async (extensionID: string = ''): Promise<Object> => {
   }
 };
 
-const readManifestSync = (extensionID: string = ''): Object => {
+const readManifestSync = (extensionID: string): Object => {
   let filePath;
 
-  if (extensionID) {
-    const extensionPath = extensions.getExtension(extensionID).extensionPath;
-    filePath = resolve(extensionPath, 'package.json');
-  } else {
-    const selfRoot = findUp.sync('package.json', { cwd: __dirname });
-    filePath = findUp.sync('package.json', { cwd: join(selfRoot, '../..') });
-  }
+  const extensionPath = extensions.getExtension(extensionID).extensionPath;
+  filePath = resolve(extensionPath, 'package.json');
 
   try {
     const fileContents = readFileSync(filePath, 'utf8');
