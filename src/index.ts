@@ -16,7 +16,7 @@ const readManifest = async (extensionID: string = ''): Promise<Object> => {
   const filePath: string = resolveFilePath(extensionID);
 
   try {
-    const fileContents = await readFileAsync(filePath, 'utf8');
+    const fileContents: string = await readFileAsync(filePath, 'utf8');
     return JSON.parse(fileContents);
   } catch (err) {
     return null;
@@ -29,7 +29,7 @@ const readManifestSync = (extensionID: string = ''): Object => {
   const filePath: string = resolveFilePath(extensionID);
 
   try {
-    const fileContents = readFileSync(filePath, 'utf8');
+    const fileContents: string = readFileSync(filePath, 'utf8');
     return JSON.parse(fileContents);
   } catch (err) {
     return null;
