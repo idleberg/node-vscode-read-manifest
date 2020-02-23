@@ -13,7 +13,9 @@ Read the manifest (`package.json`) of any installed Visual Studio Code extension
 
 ## Usage
 
-`readManifest(packageID: string)` / `readManifestSync(packageID: string)`
+`readManifest(packageID?: string)` / `readManifestSync(packageID?: string)`
+
+You can omit the package ID to retrieve the manifest of the package in use
 
 **Example**:
 
