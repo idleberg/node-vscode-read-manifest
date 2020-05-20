@@ -21,6 +21,9 @@
     "package.json",
     "package manifest"
   ],
+  "engines": {
+		"node": ">=10"
+	},
   "dependencies": {
     "caller-callsite": "^4.1.0",
     "find-up": "^4.1.0"
