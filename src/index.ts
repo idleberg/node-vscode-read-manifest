@@ -2,13 +2,9 @@
 
 const { extensions } = require('vscode');
 const { homedir } = require('os');
-const { join, resolve } = require('path');
-const { promisify } = require('util');
-const { readFile, readFileSync } = require('fs');
+const { resolve } = require('path');
+const fs = require('fs');
 const callerCallsite = require('caller-callsite');
-const findUp = require('find-up');
-
-const readFileAsync = promisify(readFile);
 
 const readManifest = async (extensionID: string = ''): Promise<Object> => {
   extensionID = extensionID?.length ? extensionID : getExtensionName();
@@ -16,7 +12,7 @@ const readManifest = async (extensionID: string = ''): Promise<Object> => {
   const filePath: string = resolveFilePath(extensionID);
 
   try {
-    const fileContents: string = await readFileAsync(filePath, 'utf8');
+    const fileContents: string = await fs.promise.readFile(filePath, 'utf8');
     return JSON.parse(fileContents);
   } catch (err) {
     return null;
@@ -29,7 +25,7 @@ const readManifestSync = (extensionID: string = ''): Object => {
   const filePath: string = resolveFilePath(extensionID);
 
   try {
-    const fileContents: string = readFileSync(filePath, 'utf8');
+    const fileContents: string = fs.readFileSync(filePath, 'utf8');
     return JSON.parse(fileContents);
   } catch (err) {
     return null;
