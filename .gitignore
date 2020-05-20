@@ -8,8 +8,10 @@ npm-debug.log*
 yarn-error.log
 yarn.lock
 
+# development
+tsconfig.tsbuildinfo
+
 # project specific
 test.js
 test.ts
 todo.md
-tsconfig.tsbuildinfo
